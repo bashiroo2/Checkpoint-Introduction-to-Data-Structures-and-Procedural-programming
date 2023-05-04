@@ -1,0 +1,37 @@
+// the FUNCTION dot_product
+FUNCTION dot_product(v1,v2 : array_of_integer[n] ) : float
+VAR
+        i:integer;
+BEGIN
+ FOR i FROM 0 TO n-1 step 1 do
+        ps:=ps+v1[i]*v2[i];
+    end_for
+    return ps;
+END
+// the algorithm 
+ALGORITHM Dot product
+VAR
+    v1,v2 : ARRAY_OF INTEGER[];
+   ps : float:=0;
+  n:integer;
+  BEGIN
+    // getting the vectors sizes
+  REPEAT
+    write("insert the the vecors size");
+    read(n);
+  UNTIL (n<0)
+// filling the vectors with data
+FOR i FROM 0 TO n-1 STEP 1 DO
+     write("put v1[",i,"]");
+    Read(v1[i]);
+   write("put v2[",i,"]");
+    Read(v2[i]);
+END_FOR
+    // showing the result
+    IF (dot_product(v1,v2)==0) THEN
+        write("v1 and v2 are orthogonal");
+    ELSE
+         write("v1 and v2 are not orthogonal");
+    END_IF    
+END   
+END
